@@ -149,6 +149,7 @@ public class StacksyncClient {
 
         HttpPost method = new HttpPost(authorizeUrl);
         method.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        method.setHeader("StackSync-API", "v2");
 
         String postBody = String.format("email=%s&password=%s&permission=%s", URLEncoder.encode(email, "UTF-8"),  URLEncoder.encode(password, "UTF-8"), "allow");
         StringEntity entity = new StringEntity(postBody);
